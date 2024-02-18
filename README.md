@@ -1,2 +1,2 @@
 # Rust Samples
-This is my playaround space with Rust.
+This is my playground with Rust.
