@@ -17,4 +17,10 @@ fn main() {
     }
 
     println!("outer scope of x : {x}");
+
+    let str = "saeed";
+
+    let str = str.len();
+
+    println!("str value is: {str}");
 }
