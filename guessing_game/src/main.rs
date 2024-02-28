@@ -5,23 +5,34 @@ use std::io;
 fn main() {
     println!("Guess the number!");
 
-    let secret_number = rand::thread_rng().gen_range(1..=100).to_string();
+    let secret_number = rand::thread_rng().gen_range(1..=100);
 
-    println!("Please input your guess:");
+    loop {
+        println!("Please input your guess:");
 
-    let mut guess = String::new();
+        let mut guess = String::new();
 
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Failed to read the line!");
+        io::stdin()
+            .read_line(&mut guess)
+            .expect("Failed to read the line!");
 
-    println!("Your guessed number is {guess}");
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("Not a valid number:(");
+                continue;
+            }
+        };
 
-    let compare_result = match guess.cmp(&secret_number) {
-        Ordering::Equal => "Equal",
-        Ordering::Greater => "Greater",
-        Ordering::Less => "Less",
-    };
+        println!("Your guessed number is {guess}");
 
-    println!("Result is {compare_result}");
+        match guess.cmp(&secret_number) {
+            Ordering::Less => println!("Too small!"),
+            Ordering::Greater => println!("Too big!"),
+            Ordering::Equal => {
+                println!("You win!");
+                break;
+            }
+        }
+    }
 }
