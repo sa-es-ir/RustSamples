@@ -12,4 +12,23 @@ fn main() {
     s2.push_str("string");
 
     println!("s1 = {}, s2 = {}", s1, s2);
+
+    let str_heap = String::from("hi hi");
+
+    takes_ownership(str_heap);
+
+    //str_heap.push('c'); error because it's moved!
+
+    let x = 5;
+    only_copy(x);
+
+    println!("after calling function {}", x);
+}
+
+fn takes_ownership(some_string: String) {
+    println!("{}", some_string);
+}
+
+fn only_copy(some_thing: u32) {
+    println!("{}", some_thing);
 }
