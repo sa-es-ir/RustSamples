@@ -31,6 +31,12 @@ fn main() {
     only_copy(x);
 
     println!("after calling function {}", x);
+
+    let s_m = String::from("tuple");
+
+    let (ss, ll) = takes_give_tuple(s_m);
+
+    println!("string = {}, length = {}", ss, ll);
 }
 
 fn takes_ownership(some_string: String) {
@@ -43,4 +49,10 @@ fn only_copy(some_thing: u32) {
 
 fn takes_gives_ownership(some_string: String) -> String {
     some_string.add("rhs")
+}
+
+fn takes_give_tuple(str: String) -> (String, usize) {
+    let length = str.len();
+
+    (str, length)
 }
