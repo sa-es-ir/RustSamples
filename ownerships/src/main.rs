@@ -1,3 +1,5 @@
+use std::ops::Add;
+
 fn main() {
     let mut str_heap = String::from("hello");
 
@@ -19,6 +21,12 @@ fn main() {
 
     //str_heap.push('c'); error because it's moved!
 
+    let str_heap = String::from("hi2");
+
+    let str_heap = takes_gives_ownership(str_heap);
+
+    println!("takes ownership again yay {}", str_heap);
+
     let x = 5;
     only_copy(x);
 
@@ -31,4 +39,8 @@ fn takes_ownership(some_string: String) {
 
 fn only_copy(some_thing: u32) {
     println!("{}", some_thing);
+}
+
+fn takes_gives_ownership(some_string: String) -> String {
+    some_string.add("rhs")
 }
