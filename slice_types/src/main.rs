@@ -18,6 +18,14 @@ fn main() {
     let first_word = first_word_with_slice(&s);
 
     println!("Got first word with slice: {}", first_word);
+
+    let string_literal = "Hello, world!";
+
+    println!(
+        "Slice 2-8 in string literals {} -> {}",
+        string_literal,
+        &string_literal[2..8]
+    );
 }
 
 fn first_word_no_slice(s: &String) -> usize {
