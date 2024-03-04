@@ -26,6 +26,14 @@ fn main() {
         string_literal,
         &string_literal[2..8]
     );
+
+    let array = [1, 2, 3, 4, 5, 6, 7];
+
+    print!("array -> ");
+    display_array(&array);
+    println!();
+    print!("slice array 2-5 -> ");
+    display_array(&array[2..5]);
 }
 
 fn first_word_no_slice(s: &String) -> usize {
@@ -50,4 +58,10 @@ fn first_word_with_slice(s: &String) -> &str {
     }
 
     &s[..]
+}
+
+fn display_array(arr: &[u32]) {
+    for item in arr {
+        print!("{}", item);
+    }
 }
