@@ -25,6 +25,10 @@ fn main() {
         "user2 --> username: {} email: {}",
         user1.sign_in_count, user2.email
     );
+
+    let black = Color(0, 0, 0);
+    let origin = Point(0, 0, 0);
+    let alwaysEqual = AlwaysEqual;
 }
 
 struct User {
@@ -42,3 +46,11 @@ fn build_user(username: String, email: String) -> User {
         sign_in_count: 1,
     }
 }
+
+// tuple struct
+
+struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
+
+// unit-like struct
+struct AlwaysEqual;
