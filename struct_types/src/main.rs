@@ -20,9 +20,10 @@ fn main() {
         ..user1
     };
 
+    // here can not use user1.username since it already borrowed by user2
     println!(
         "user2 --> username: {} email: {}",
-        user2.username, user2.email
+        user1.sign_in_count, user2.email
     );
 }
 
