@@ -33,6 +33,15 @@ fn main() {
     println!("Rectangle is {:?}", dim_struct);
 
     println!("Rectangle longer display is {:#?}", dim_struct);
+
+    let scale = 2;
+
+    let rect = Rectangle {
+        width: dbg!(30 * scale),
+        height: 20,
+    };
+
+    dbg!(&rect);
 }
 
 fn area(width: u32, height: u32) -> u32 {
