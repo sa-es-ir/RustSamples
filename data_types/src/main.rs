@@ -16,5 +16,5 @@ fn main() {
     let xx = arr[0];
     println!("fdsafds {xx} fdfd");
 
-    let arr_str: [&str; 3] = ["fasdf", "fff", "2ed"];
+    //let arr_str: [&str; 3] = ["fasdf", "fff", "2ed"];
 }
