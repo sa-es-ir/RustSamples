@@ -31,6 +31,8 @@ fn main() {
     );
 
     println!("Rectangle is {:?}", dim_struct);
+
+    println!("Rectangle longer display is {:#?}", dim_struct);
 }
 
 fn area(width: u32, height: u32) -> u32 {
