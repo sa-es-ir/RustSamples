@@ -29,6 +29,8 @@ fn main() {
         "Area struct of rectangle with height {} and width {} is {}",
         dim_struct.height, dim_struct.width, area
     );
+
+    println!("Rectangle is {:?}", dim_struct);
 }
 
 fn area(width: u32, height: u32) -> u32 {
@@ -43,6 +45,8 @@ fn area_struct(rectangle: &Rectangle) -> u32 {
     rectangle.width * rectangle.height
 }
 
+// add derive attribute to be able to print struct in the println!
+#[derive(Debug)]
 struct Rectangle {
     width: u32,
     height: u32,
