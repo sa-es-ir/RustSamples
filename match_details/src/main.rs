@@ -34,5 +34,6 @@ fn value_in_cents(coin: Coin) -> u32 {
             println!("us state {:?}", state);
             25
         }
+        _ => 2, // discard, for covering any other match arms
     }
 }
