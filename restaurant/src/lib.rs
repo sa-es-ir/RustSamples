@@ -19,11 +19,20 @@ pub mod front_of_house {
 
 fn deliver_order() {}
 
-mod back_of_house {
-    fn fix_incorrect_order() {
-        cook_order();
-        super::deliver_order();
+pub mod back_of_house {
+
+    #[derive(Debug)]
+    pub struct Breakfast {
+        pub toast: String,
+        seasonal_fruit: String,
     }
 
-    fn cook_order() {}
+    impl Breakfast {
+        pub fn summer(toast: &str) -> Breakfast {
+            Breakfast {
+                toast: String::from(toast),
+                seasonal_fruit: String::from("peaches"),
+            }
+        }
+    }
 }
