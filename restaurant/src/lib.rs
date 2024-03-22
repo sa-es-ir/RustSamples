@@ -1,7 +1,7 @@
 pub mod front_of_house {
     pub mod hosting {
         pub fn add_to_waitlist() {
-            super::super::deliver_order();
+            crate::deliver_order();
             println!("add_to_waitlist called");
         }
 
