@@ -1,3 +1,5 @@
+use std::iter;
+
 fn main() {
     let s = String::from("Hello");
     let s2 = String::from("world!");
@@ -21,4 +23,7 @@ fn main() {
     for c in string.chars() {
         print!("{c}-");
     }
+    let ch = &string[0..4];
+
+    println!("\t {ch}");
 }
